@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Cpyrr",
+  "name": "Cpyrr compiler and VM",
   "icons": [
     {
       "src": "favicon.ico",
