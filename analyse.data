@@ -133,7 +133,7 @@ var x : int;
 typedef t : array[1..5] of int;
 typedef s : struct {
 num : t;
-num : float; // variables de même nom mais de types différents
+num : float; // variables de mï¿½me nom mais de types diffï¿½rents
 };
 
 typedef s1 : struct {
@@ -153,7 +153,7 @@ begin
 end
 };
 
-// Procédure qui retourne quelque chose
+// Procï¿½dure qui retourne quelque chose
 procedure p(a:int) {
 var i : float;
 begin
@@ -162,18 +162,18 @@ end
 };
 
 begin
-x:=5.5 + 5; // Affectation de float à un entier
+x:=5.5 + 5; // Affectation de float ï¿½ un entier
 nombre = demande_nombre();
-p(); // Appel de la procédure sans paramètre
+p(); // Appel de la procï¿½dure sans paramï¿½tre
 elem.c[1] := 8; // traitement d'une structure comme un tableau
 
-// variable non déclarée
+// variable non dï¿½clarï¿½e
 while(i>0)
 begin
         // Affectation dans la condition au lieu d'une exp relationnelle
         if (nombre % 2 == 1) then
         begin
-            printf("Le nombre %d %e devait être pair\n",nombre);
+            printf("Le nombre %d %e devait ï¿½tre pair\n",nombre);
             elem2.num := nombre % 0.0; //Division float par 0
         end
         else if(nombre % 2 == 0.0) then

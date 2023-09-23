@@ -24,8 +24,9 @@ Module.expectedDataFileDownloads++;
           .substring(0, location.pathname.toString().lastIndexOf("/")) + "/"
       );
     }
+    console.log("PACKAGE_PATH: " + PACKAGE_PATH);
     var PACKAGE_NAME = "/src/build/wasm/analyse.data";
-    var REMOTE_PACKAGE_BASE = "analyse.data";
+    var REMOTE_PACKAGE_BASE = "/cpyrr/analyse.data";
     if (
       typeof Module["locateFilePackage"] === "function" &&
       !Module["locateFile"]
