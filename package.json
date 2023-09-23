@@ -1,0 +1,12 @@
+{
+  "name": "cpyrr",
+  "version": "1.0.0",
+  "homepage": "https://william-maillard.github.io/cpyrr",
+  "description": "Compiler (using C, lex and yacc) and Virtual machine that execute the binary tree made by the compiler, for a created language called cpyrr.",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [],
+  "author": "MAILLARD William",
+  "license": "ISC"
+}

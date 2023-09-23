@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import '~font-awesome/css/font-awesome.min.css';
+body {
+  background-image: url(../img/background.gif);
+  background-size: 100vw 100vh;
+  /* La largeur est de 100%, la hauteur est automatique */
+  background-repeat: repeat-x;
+  /* Répéter horizontalement (en x) */
+  /* D'autres styles CSS pour la page, comme la couleur de texte, la police, etc. */
+}
+
+.frame {
+  padding: 5px;
+  margin: 0.5%;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+/* title section */
+#app-title {
+  width: 400px;
+  height: 15vh;
+  padding: 5px;
+}
+#app-title #app-title-logo {
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 10px;
+}
+#app-title #app-title-text {
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-top: 2px;
+  padding-right: 100px;
+  background: linear-gradient(45deg, rgb(3, 182, 252), rgb(255, 0, 170));
+  background-clip: text;
+  color: transparent;
+  font-size: 24px;
+}
+
+/* core section */
+#app-core {
+  width: 100vw;
+  height: 85vh;
+}
+#app-core #app-core-row-1 col, #app-core #app-core-row-2 col {
+  padding: 5px;
+  margin: 5px;
+}
+#app-core #frame-code-editor {
+  width: 60vw;
+  height: 60vh;
+}
+#app-core #frame-code-editor #code-editor {
+  resize: none;
+  height: 90%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+}
+#app-core #frame-tree {
+  width: 25vw;
+  height: 60vh;
+}
+#app-core #tools-tab {
+  width: 60vw;
+  height: 22vh;
+}
+#app-core #tools-tab #frame-buttons {
+  height: 30%;
+  margin-top: 5px;
+}
+#app-core #tools-tab #frame-buttons button {
+  height: 80%;
+  width: 100%;
+  padding: 2vh 0;
+  background: linear-gradient(45deg, rgb(3, 182, 252), rgb(255, 0, 170));
+  background-clip: text;
+  color: transparent;
+  font-size: 24px;
+  background-clip: border-box;
+  text-align: center;
+  font-size: 1em;
+  line-height: 0.2em;
+  color: white;
+}
+#app-core #tools-tab #frame-buttons button span {
+  display: inline-block;
+  padding-bottom: 0.1em;
+}
+#app-core #tools-tab #frame-output {
+  height: 64%;
+  margin-top: 10px;
+}
+#app-core #tools-tab #frame-output #stdout {
+  text-align: left;
+}
+#app-core #frame-files-browser {
+  width: 25vw;
+  height: 22vh;
+  margin-top: 5px;
+}
+#app-core h2 {
+  background: linear-gradient(45deg, rgb(3, 182, 252), rgb(255, 0, 170));
+  background-clip: text;
+  color: transparent;
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=app.output.css.map */

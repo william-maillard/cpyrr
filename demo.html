@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cpyrr</title>
+    <link rel="icon" type="image/x-icon" href="/cpyrr/favicon.ico" />
+    <link rel="stylesheet" href="/cpyrr/assets/css/app.output.css" />
+  </head>
+
+  <body>
+    <script src="/cpyrr/analyse.js"></script>
+    <script>
+      var my_arguments = ["/src/data/helloWorld.cpyrr"];
+      var arguments_ = my_arguments;
+      calledRun = false;
+      run().then(display_program(getSourceFile("/src/data/helloWorld.cpyrr")));
+    </script>
+    <!-- 
+- ls pour voir les fichiers préchargé : FS.readdir("/")
+- passer les arguments dans la variabels arguments_ (pas le nom du programme, argv[0] est géré par le webassembly)
+    -->
+    <div class="App">
+      <div id="app-title" class="container text-center">
+        <div class="row align-items-start">
+          <div id="app-title-logo" class="col">
+            <img
+              src="/cpyrr/favicon.ico"
+              alt="Cpyrr Logo"
+              width="75"
+              height="75"
+            />
+          </div>
+
+          <div id="app-title-text" class="col">
+            <h1>Compilateur<br />VM</h1>
+          </div>
+        </div>
+      </div>
+
+      <div id="app-core" class="container-fluid text-center">
+        <div id="app-core-row-1" class="row">
+          <div id="frame-code-editor" class="frame col">
+            <h2>Code editor</h2>
+            <textarea id="code-editor" spellcheck="false"></textarea>
+          </div>
+
+          <div id="frame-tree" class="frame col">
+            <h2>Intermediate tree</h2>
+            TODO
+          </div>
+        </div>
+
+        <div id="app-core-row-2" class="row">
+          <div id="frame-files-browser" class="frame col">
+            <h2>Files browser</h2>
+            TODO
+          </div>
+
+          <div id="tools-tab" class="col">
+            <div id="frame-buttons" class="container frame">
+              <div class="row">
+                <div class="col">
+                  <button
+                    type="button"
+                    id="btnAnalyse"
+                    id="btnAnalyse"
+                    class="btn btn-primary"
+                  >
+                    <span>Compile</span>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    type="button"
+                    id="btnMachineVirtuelle"
+                    class="btn btn-primary"
+                  >
+                    <span>Run</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="frame-output" class="frame">
+              <h2>Output console</h2>
+              <div id="stdout">$...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--- preload hellworld program in editor -->
+    <script>
+      function display_program(prog) {
+        document.getElementById("code-editor").value = prog;
+      }
+
+      function getSourceFile(cheminFichier) {
+        let data = FS.readFile(cheminFichier);
+        // data = data.split(",");
+        let content = String.fromCharCode(...data);
+        console.log("contenu fichier " + content);
+
+        return content;
+      }
+    </script>
+    <script>
+      out = (function () {
+        var element = document.getElementById("stdout");
+        if (element) element.innerHTML = ""; // clear browser cache
+        return function (text) {
+          if (arguments.length > 1)
+            text = Array.prototype.slice.call(arguments).join(" ");
+          // These replacements are necessary if you render to raw HTML
+          text = text.replace(/&/g, "&amp;");
+          text = text.replace(/</g, "&lt;");
+          text = text.replace(/>/g, "&gt;");
+          text = text.replace("\n", "<br>", "g");
+          console.log(text);
+          if (element) {
+            element.innerHTML += text + "\n";
+            element.scrollTop = element.scrollHeight; // focus on bottom
+          }
+        };
+      })();
+    </script>
+  </body>
+</html>

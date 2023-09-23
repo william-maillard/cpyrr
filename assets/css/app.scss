@@ -1,0 +1,131 @@
+@import '~font-awesome/css/font-awesome.min.css';
+
+$col1-width: 60vw;
+$col2-width: 25vw;
+$row1-height: 40vh;
+$row2-height: 22vh;
+
+@mixin text-blue2pink-gradient {
+    background: linear-gradient(45deg, rgb(3, 182, 252), rgb(255, 0, 170));
+    background-clip: text;
+    color: transparent;
+    font-size: 24px;
+}
+
+
+
+body {
+    background-image: url(../img/background.gif);
+    background-size: 100vw 100vh;
+    /* La largeur est de 100%, la hauteur est automatique */
+    background-repeat: repeat-x;
+    /* Répéter horizontalement (en x) */
+    /* D'autres styles CSS pour la page, comme la couleur de texte, la police, etc. */
+}
+
+.frame {
+    padding: 5px;
+    margin: 0.5%;
+
+    background-color: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+/* title section */
+#app-title {
+    width: 400px;
+    height: 15vh;
+    padding: 5px;
+
+    #app-title-logo {
+        margin-right: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+    }
+    
+    #app-title-text {
+        margin-left: 0px;
+        padding-left: 0px;
+        padding-top: 2px;
+        padding-right: 100px;
+
+        @include text-blue2pink-gradient
+    }
+}
+
+/* core section */
+#app-core {
+    width: 100vw;
+    height: 85vh;
+
+    #app-core-row-1 col, #app-core-row-2 col {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    #frame-code-editor {
+        width: 60vw;
+        height: 60vh;
+
+        #code-editor {
+            resize: none;
+            height: 90%;
+            width: 100%;     
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+        }
+    }
+
+    #frame-tree {
+        width: 25vw;
+        height: 60vh;
+    }
+
+    #tools-tab {
+        width: $col1-width;
+        height: $row2-height;
+
+        #frame-buttons {
+            height: 30%;
+            margin-top: 5px;
+
+            button {
+                height: 80%;
+                width: 100%;
+                padding: 2vh 0;
+                @include text-blue2pink-gradient;
+                background-clip: border-box;
+                text-align: center;
+                font-size: 1em;
+                line-height: 0.2em;
+                color: white;
+                
+                span {
+                    display: inline-block;
+                    padding-bottom: 0.1em;
+                }
+            }
+        }
+
+        #frame-output {
+            height: 64%;
+            margin-top: 10px;
+            #stdout {
+                text-align: left;
+            }
+        }
+    }
+
+    #frame-files-browser {
+        width: $col2-width;
+        height: $row2-height;
+        margin-top: 5px;
+    }
+
+    h2 {
+       @include text-blue2pink-gradient;
+    }
+}
