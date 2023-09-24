@@ -12,6 +12,15 @@ $row2-height: 22vh;
     font-size: 24px;
 }
 
+@mixin h2-button-icon {
+    padding-left: 4px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    width:30px;
+    height:30px;
+}
+
 
 
 body {
@@ -92,30 +101,58 @@ body {
             height: 30%;
             margin-top: 5px;
 
-            button {
-                height: 80%;
-                width: 100%;
+            #compiler, #program-name {
                 padding: 2vh 0;
+                height: 60%;
+                margin-top: 5px;
                 @include text-blue2pink-gradient;
-                background-clip: border-box;
                 text-align: center;
-                font-size: 1em;
+                font-size: 0.75em;
                 line-height: 0.2em;
-                color: white;
+                border-radius: 10px;
                 
                 span {
                     display: inline-block;
-                    padding-bottom: 0.1em;
+                    padding-bottom: 0.2em;
                 }
             }
+
+            #program-name {
+                width: 145%;
+                margin-right: 10px;
+            }
+
+            #compiler {
+                width: 60%;
+                margin-left: 40%;
+                background-clip: border-box;
+                color: white;
+            }            
         }
 
         #frame-output {
             height: 64%;
             margin-top: 10px;
+
+            #flush-output {
+                background-color: rgba(255, 255, 255, 0);
+                margin-left: 10px;
+                border-radius: 100%;
+
+                img {
+                    @include h2-button-icon;
+                }
+            }
+
             #stdout {
                 text-align: left;
-            }
+                resize: none;
+                height: 60%;
+                width: 100%;     
+                background-color: rgba(255, 255, 255, 0);
+                border-radius: 10px;
+                color:blueviolet;
+            }  
         }
     }
 
@@ -123,6 +160,32 @@ body {
         width: $col2-width;
         height: $row2-height;
         margin-top: 5px;
+
+        #refresh-files-browser {
+            background-color: rgba(255, 255, 255, 0);
+            margin-left: 10px;
+            border-radius: 100%;
+
+            img {
+                @include h2-button-icon;
+            }
+        }
+        ul {
+            max-height: $row2-height - 7vh;
+            overflow: auto;
+            column-count: 2;
+            list-style: none ;
+
+            li:hover {
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+            }
+
+            li:active {
+                @include text-blue2pink-gradient;
+                font-size: 1em;
+            }
+        }
     }
 
     h2 {

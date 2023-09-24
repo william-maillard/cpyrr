@@ -73,35 +73,93 @@ body {
   height: 30%;
   margin-top: 5px;
 }
-#app-core #tools-tab #frame-buttons button {
-  height: 80%;
-  width: 100%;
+#app-core #tools-tab #frame-buttons #compiler, #app-core #tools-tab #frame-buttons #program-name {
   padding: 2vh 0;
+  height: 60%;
+  margin-top: 5px;
   background: linear-gradient(45deg, rgb(3, 182, 252), rgb(255, 0, 170));
   background-clip: text;
   color: transparent;
   font-size: 24px;
-  background-clip: border-box;
   text-align: center;
-  font-size: 1em;
+  font-size: 0.75em;
   line-height: 0.2em;
-  color: white;
+  border-radius: 10px;
 }
-#app-core #tools-tab #frame-buttons button span {
+#app-core #tools-tab #frame-buttons #compiler span, #app-core #tools-tab #frame-buttons #program-name span {
   display: inline-block;
-  padding-bottom: 0.1em;
+  padding-bottom: 0.2em;
+}
+#app-core #tools-tab #frame-buttons #program-name {
+  width: 145%;
+  margin-right: 10px;
+}
+#app-core #tools-tab #frame-buttons #compiler {
+  width: 60%;
+  margin-left: 40%;
+  background-clip: border-box;
+  color: white;
 }
 #app-core #tools-tab #frame-output {
   height: 64%;
   margin-top: 10px;
 }
+#app-core #tools-tab #frame-output #flush-output {
+  background-color: rgba(255, 255, 255, 0);
+  margin-left: 10px;
+  border-radius: 100%;
+}
+#app-core #tools-tab #frame-output #flush-output img {
+  padding-left: 4px;
+  padding-right: 2px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  width: 30px;
+  height: 30px;
+}
 #app-core #tools-tab #frame-output #stdout {
   text-align: left;
+  resize: none;
+  height: 60%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  color: blueviolet;
 }
 #app-core #frame-files-browser {
   width: 25vw;
   height: 22vh;
   margin-top: 5px;
+}
+#app-core #frame-files-browser #refresh-files-browser {
+  background-color: rgba(255, 255, 255, 0);
+  margin-left: 10px;
+  border-radius: 100%;
+}
+#app-core #frame-files-browser #refresh-files-browser img {
+  padding-left: 4px;
+  padding-right: 2px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  width: 30px;
+  height: 30px;
+}
+#app-core #frame-files-browser ul {
+  max-height: 15vh;
+  overflow: auto;
+  column-count: 2;
+  list-style: none;
+}
+#app-core #frame-files-browser ul li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+#app-core #frame-files-browser ul li:active {
+  background: linear-gradient(45deg, rgb(3, 182, 252), rgb(255, 0, 170));
+  background-clip: text;
+  color: transparent;
+  font-size: 24px;
+  font-size: 1em;
 }
 #app-core h2 {
   background: linear-gradient(45deg, rgb(3, 182, 252), rgb(255, 0, 170));
