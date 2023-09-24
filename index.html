@@ -26,6 +26,10 @@
       let data = FS.readFile(path);
       let source_code = String.fromCharCode(...data);
       document.getElementById("code-editor").value = source_code;
+
+      // put the file name in the input tag
+      let file_name = path.split("/").pop().split(".")[0];
+      document.getElementById("program-name").value = file_name;
     }
 
     function refresh_files_browser() {
@@ -155,6 +159,7 @@
       calledRun = false;
       // wait for the FS module to be loaded
       window.setTimeout(() => load_file_in_code_editor("/src/data/helloWorld.cpyrr"), 5000);
+      window.setTimeout(refresh_files_browser, 10000)
     </script>
     <!-- 
     - ls pour voir les fichiers préchargé : FS.readdir("/")
