@@ -91,6 +91,16 @@ body {
     #frame-tree {
         width: 25vw;
         height: 60vh;
+        overflow: auto;
+
+        #display-tree {
+            resize: none;
+            height: auto;
+            width: auto;     
+            border: 1px solid red;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+        }
     }
 
     #tools-tab {
@@ -191,4 +201,13 @@ body {
     h2 {
        @include text-blue2pink-gradient;
     }
+}
+
+
+#gitlab {
+    position: fixed; /* This will position the image relative to the viewport */
+    top: 0; /* Position the image at the bottom */
+    right: 0; /* Position the image at the right */
+    width: 100px;
+    height: 100px;
 }
